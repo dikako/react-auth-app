@@ -1,0 +1,66 @@
+LEARN CREATE API AUTH WIT RUBY RAILS
+
+Step 1
+
+1. rails new auth_app —database=postgresql ~> make rails project using postgresql database
+2. rails db:create   ~> create database
+3. on Gemfile add 
+      gem ‘bcrypt’, ‘~> 3.1’, ‘>= 3.1.12’
+      gem “rack-cars”, :require => ‘rack/cors’
+4. bundle ~> run bundle for install dependency on Gemfile
+5. Create file on directory config/initializers
+       cors.rb
+       session_store.rb
+6. rails s
+
+Step 2
+1. rails g model User email password_digest ~> generate User model (email & to field for password & confirm_password)
+2. rails db:migrate ~> for migration db
+3. rails c ~> for debugging
+      User.create!(email: “email@dev.com”, password: “qwertyuiop”, password_confirmation: “qwertyuiop”)
+4. Modified config/routes.rb
+5. Add an modified file app/controllers/session_controller.rb
+
+Step 3
+1. Modified config/routes.rb
+2. Add and modified app.controllers/registration_controller.rb
+3. Modified application_controller.rb
+4. rails s
+5. On other terminal type 
+       curl —header “Content-Type: application/json” \
+       — request POST \
+       — data ‘{“user”: { “email”: “email@dev.com”, “password”: “qwertyuiop”}}’ \
+      http://localhost:3000/sessions      
+6. Modified routes.rb
+       delete :logout, to: "sessions#logout"
+      get :logged_in, to: "sessions#logged_in"
+7. Add & modified file app/controller/concerns/current_user_concern.rb
+8. Modified sessions_controller.rb (login, logout)
+
+Step 4
+1. Set environment production dan local
+
+STEP 5
+1. On terminal
+2. yarn add devcamp-js-builder
+3. sudo npm install devcamp-js-builder -g -f
+4. js-generate
+5. Choose react-redux-router
+6. Input project name “ReactAuthApp”
+7. cd ReactAuthApp
+8. npm install
+9. Create file Dashboard.js, Home.js
+10. Modified Home.js, type rcc ~> for generate react class component
+11. Modified Dashboard.js, type rf ~> for generate react functional
+12. Modified app.js
+13. nmp run start ~> check all run is ok
+14. nmp I axios
+
+STEP 6
+1. On terminal
+2. rails s -p 3001
+3. Create  file on components directory auth/Registration.js
+4. Modified registration.js
+5. rake routes ~> view list route
+6. npm run start
+
