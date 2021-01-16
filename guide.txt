@@ -64,3 +64,5 @@ STEP 6
 5. rake routes ~> view list route
 6. npm run start
 
+STEP 7 
+1. React JS Render Props for Managing the Logged In State and Redirecting Users
